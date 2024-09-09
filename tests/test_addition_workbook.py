@@ -19,8 +19,3 @@ class TestAdditionWorkbook :
     # 答え: 4 -> 4 + 0, 2 + 2, 3 + 1, etc
     def test__generate_fomula__single_digit_answer_and_two_value__including_0(self) :
         pass
-
-    # 一桁の足し算の式で、答えも一桁になるかのテスト
-    def test__1_digit_formula_1_digit_answer(self) :
-        pass
-    
