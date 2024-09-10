@@ -1,4 +1,5 @@
 import pytest
+import random
 from math_workbook.addition_workbook import AdditionWorkbook
 
 class TestAdditionWorkbook :
@@ -7,10 +8,10 @@ class TestAdditionWorkbook :
     def setup_class(cls) :
         cls.workbook = AdditionWorkbook()
 
-
     # 足し算の答えが一桁になるかどうかのテスト 0を除く
-    def test__generate_answer__excluding_0(self) :
-        self.workbook.generate_answer()
+    def test__generate_answer__excluding_0(self, monkeypatch) :
+        monkeypatch.setattr(random, 'randint', lambda a, b: 7)
+        assert self.workbook.generate_answer() == 7
 
     # 足し算の答えが一桁になるかどうかのテスト 0を含む
     def test__generate_answer__including_0(self) :
