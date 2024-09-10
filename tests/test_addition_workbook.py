@@ -1,10 +1,16 @@
 import pytest
+from math_workbook.addition_workbook import AdditionWorkbook
 
 class TestAdditionWorkbook :
+    
+    @classmethod
+    def setup_class(cls) :
+        cls.workbook = AdditionWorkbook()
+
 
     # 足し算の答えが一桁になるかどうかのテスト 0を除く
     def test__generate_answer__excluding_0(self) :
-        pass
+        self.workbook.generate_answer()
 
     # 足し算の答えが一桁になるかどうかのテスト 0を含む
     def test__generate_answer__including_0(self) :
