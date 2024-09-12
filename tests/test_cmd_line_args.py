@@ -6,7 +6,9 @@ class TestCmdLineArgs :
     
     @classmethod
     def setup_class(cls) :
-        cls.cmd_line_args = CmdLineArgs()
+        cls.inst = CmdLineArgs()
 
-
+    def test__generate_answer__excluding_0(self, monkeypatch) :
+        monkeypatch.setattr(random, 'randint', lambda a, b: 7)
+        assert self.inst.generate_answer() == 7
 
