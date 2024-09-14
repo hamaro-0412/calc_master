@@ -36,26 +36,34 @@ A4用紙のイメージ
 ```
 
 ## フォーマット例
-### 足し算
 式も答えもすべて一桁の整数
 ```
-{}+{}=f'{random.randint(1,9)}'
+python meath_workbook.py f'{random.randint(1,9)}' a+b
 ```
 
 式に1桁の整数を入れて、while文か何かで、一桁の整数でるまでループさせるとか。
 コマンドラインでこの式書くのは冗長かも
 
 ```
-f'{random.randint(1,9)}' + f'{random.randint(1,9)}' =f'{random.randint(1,9)}'
+f'{random.randint(1,9)}' + f'{random.randint(1,9)}' = f'{random.randint(1,9)}'
+````
+
+random関数を省いたパターン。  
+上記の式よりは記載量少ない。
+
+```
+f'{randint(1,8) + randint(1,8) = randint(2,9)}'
 ```
 
-式も答えもすべて一桁の整数 0を含む。
+足し算であれば、答えだけ記載しておけば左辺の式の候補も見つかる。
+
 ```
-'{:1} + {:1} = {:1}' --include='0'
+f'{}' + f'{}' = f'{randint(2,9)}'
 ```
 
-### 掛け算
-式は一桁、答えは何桁でもOK
 ```
-'{:1} * {:1} = {}'
+f'{randint(1,8) + randint(1,8)}' < 10
 ```
+
+```
+
