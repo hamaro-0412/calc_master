@@ -38,7 +38,17 @@ A4用紙のイメージ
 ## フォーマット例
 式も答えもすべて一桁の整数
 ```
-python meath_workbook.py f'{random.randint(1,9)}' a+b
+python math_workbook.py {1d}+{1d}={1d}
+python math_workbook.py randint(1,8)+randint(1,8)={1d}
+```
+
+```
+python math_workbook.py randint(1,9)+randint(1,9)={+1d} #一桁の足し算
+python math_workbook.py randint(1,9)-randint(1,9)={+1d} #一桁の引き算 答えにマイナス禁止
+python math_workbook.py randint(1,9)*randint(1,9)={d} #掛け算
+python math_workbook.py randint(1,81)/randint(1,81)={d} #割り算　答えに余り禁止
+python math_workbook.py randint(1,81)/randint(1,81)={d},R #割り算　答えに余りあり
+
 ```
 
 式に1桁の整数を入れて、while文か何かで、一桁の整数でるまでループさせるとか。
