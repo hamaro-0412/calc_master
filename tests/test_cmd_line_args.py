@@ -1,7 +1,7 @@
 import pytest
 
 from random import randint
-from calc_master.cmd_line_args import CmdLineArgs
+from calc_quiz.cmd_line_args import CmdLineArgs
 
 class TestCmdLineArgs :
     

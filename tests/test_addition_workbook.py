@@ -1,6 +1,6 @@
 import pytest
 import random
-from calc_master.addition_workbook import AdditionWorkbook
+from calc_quiz.addition_workbook import AdditionWorkbook
 
 class TestAdditionWorkbook :
     
