@@ -36,44 +36,18 @@ A4用紙のイメージ
 ```
 
 ## フォーマット例
-式も答えもすべて一桁の整数
-```
-python math_workbook.py {1d}+{1d}={1d}
-python math_workbook.py randint(1,8)+randint(1,8)={1d}
-```
 
 ```
-python math_workbook.py randint(1,9)+randint(1,9)={+1d} #一桁の足し算
-python math_workbook.py randint(1,9)-randint(1,9)={+1d} #一桁の引き算 答えにマイナス禁止
-python math_workbook.py randint(1,9)*randint(1,9)={d} #掛け算
-python math_workbook.py randint(1,81)/randint(1,81)={d} #割り算　答えに余り禁止
-python math_workbook.py randint(1,81)/randint(1,81)={d},R #割り算　答えに余りあり
+python calc_quiz.py randint(1,9)+randint(1,9)=ans(1,9) #一桁の足し算
+python calc_quiz.py randint(1,9)-randint(1,9)=ans(1,9) #一桁の引き算
+python calc_quiz.py randint(1,9)*randint(1,9)=ans(1,81) #掛け算
+python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81,remainder=0) #割り算　答えに余り禁止
+python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81) #割り算　答えに余りあり
 
 ```
 
-式に1桁の整数を入れて、while文か何かで、一桁の整数でるまでループさせるとか。
-コマンドラインでこの式書くのは冗長かも
-
-```
-f'{random.randint(1,9)}' + f'{random.randint(1,9)}' = f'{random.randint(1,9)}'
-````
-
-random関数を省いたパターン。  
-上記の式よりは記載量少ない。
-
-```
-f'{randint(1,8) + randint(1,8) = randint(2,9)}'
-```
-
-足し算であれば、答えだけ記載しておけば左辺の式の候補も見つかる。
-
-```
-f'{}' + f'{}' = f'{randint(2,9)}'
-```
-
-```
-f'{randint(1,8) + randint(1,8)}' < 10
-```
-
-```
+演算子も正規表現のように表現できたら便利かも  
+例 : [+-*/] -> 足し算、引き算、掛け算、割り算の何れかの演算子を使う。  
+random.choice('+-*/')で実現可能  
+数式の計算順序を決める括弧も乱数で制御したいが入力が複雑になりそう。
 
