@@ -52,3 +52,8 @@ random.choice('+-*/')で実現可能
 random.choiceまでコマンドライン引数に組み込むと冗長になりそう。
 数式の計算順序を決める括弧も乱数で制御したいが入力が複雑になりそう。
 
+```
+python calc_quiz.py randint(1,9)[+-*/]randint(1,9)=ans(1,9)
+python calc_quiz.py randint(1,9)+randint(1,9)+randint(1,9)=ans(1,99)
+```
+
