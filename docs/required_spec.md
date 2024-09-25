@@ -40,6 +40,7 @@ A4用紙のイメージ
 ```
 python calc_quiz.py randint(1,9)+randint(1,9)=ans(1,9) #一桁の足し算
 python calc_quiz.py randint(1,9)-randint(1,9)=ans(1,9) #一桁の引き算
+python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9)=ans(1,999,include='()') #三桁の四則演算、括弧を含む
 python calc_quiz.py randint(1,9)*randint(1,9)=ans(1,81) #掛け算
 python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81,remainder=0) #割り算　答えに余り禁止
 python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81) #割り算　答えに余りあり
