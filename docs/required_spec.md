@@ -41,12 +41,27 @@ A4用紙のイメージ
 python calc_quiz.py ans(1,9,+)
 python calc_quiz.py randint(1,9)+randint(1,9)=ans(1,9) #一桁の足し算
 python calc_quiz.py randint(1,9)-randint(1,9)=ans(1,9) #一桁の引き算
-python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9)=ans(1,999) --include='()' #三桁の四則演算、括弧を含む
+python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9)=ans(1,999) --include=() #三桁の四則演算、括弧を含む
 python calc_quiz.py randint(1,9)*randint(1,9)=ans(1,81) #掛け算
 python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81) --remainder=0 #割り算　答えに余り禁止
 python calc_quiz.py randint(1,81)/randint(1,81)=ans(1,81) #割り算　答えに余りあり
 
 ```
+
+ans関数の仕様  
+ans(1,10) --> 1, 2, 3,・・・9の整数 1<=ans<10
+ans(5) --> 0, 1, 2, 3, 4 0<=ans<5
+答えの範囲をもう少し直感的に記述したい。
+第1引数を計算式、第2引数を答えの範囲とすると直感的に記載できそう。
+
+```
+python calc_quiz.py randint(1,9)+randint(1,9) 1<=ans<10
+python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9) 0<=ans --include=() --remainder=0
+python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9) ans!=0 --include=() --remainder=0
+
+
+```
+
 
 演算子も正規表現のように表現できたら便利かも  
 例 : [+-*/] -> 足し算、引き算、掛け算、割り算の何れかの演算子を使う。  
