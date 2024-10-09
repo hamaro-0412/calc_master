@@ -55,9 +55,9 @@ ans(5) --> 0, 1, 2, 3, 4 0<=ans<5
 第1引数を計算式、第2引数を答えの範囲とすると直感的に記載できそう。
 
 ```
-python calc_quiz.py randint(1,9)+randint(1,9) 1<=ans<10
-python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9) 0<=ans --include=() --remainder=0
-python calc_quiz.py randint(1,9)[+-/*]randint(1,9)[+-/*]randint(1,9) ans!=0 --include=() --remainder=0
+python calc_quiz.py randint(1,9)+randint(1,9) --cond='1<=ans<10'
+python calc_quiz.py randint(1,9)[+,-,/,*]randint(1,9)[+,-,/,*]randint(1,9) --cond='0<=ans' --include='()' --remainder=0
+python calc_quiz.py randint(1,9)[+,-,/,*]randint(1,9)[+,-,/,*]randint(1,9) --cond='ans!=0' --include='()' --remainder=0
 
 
 ```
